@@ -46,6 +46,21 @@ The `Graph_api_User_add_remove.ps1` script targets the Microsoft Graph Command L
 .\Graph_api_User_add_remove.ps1 -Action Add -Scopes "User.Read" -WhatIf
 ```
 
+
+## Frontend (PowerShell GUI)
+
+A simple Windows Forms frontend is included in `Graph_api_User_frontend.ps1` so you can run **View/Add/Remove** actions from a GUI.
+
+```powershell
+.\Graph_api_User_frontend.ps1
+```
+
+### GUI notes
+
+- Windows-only (uses `System.Windows.Forms`)
+- Calls `Graph_api_User_add_remove.ps1` under the hood
+- Supports `-WhatIf` preview mode
+
 ## Notes
 
 - Add and Remove operations **merge/subtract** from the existing scope list — no grants are wiped by accident.
