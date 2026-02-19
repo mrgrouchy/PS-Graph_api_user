@@ -184,7 +184,11 @@ function Invoke-ViewAction {
     } while ($uri)
 
     $grants = $rawGrants |
-              Where-Object { $_.resourceId -eq $graphResSp.Id } |
+              Where-Object {
+                  $_.resourceId -eq $graphResSp.Id -and
+                  ($ConsentType -eq 'AllPrincipals' -or $_.consentType -eq $ConsentType) -and
+                  ($ConsentType -ne 'Principal' -or [string]::IsNullOrEmpty($PrincipalId) -or $_.principalId -eq $PrincipalId)
+              } |
               ForEach-Object {
                   [PSCustomObject]@{
                       Id          = $_.id
