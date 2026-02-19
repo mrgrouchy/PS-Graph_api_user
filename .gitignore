@@ -1,0 +1,19 @@
+# Secrets and credentials
+*.env
+*.cred
+secrets.*
+
+# PowerShell-specific
+*.psd1.local
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor/IDE directories
+.vscode/settings.json
+.idea/
+
+# Logs
+*.log

@@ -1,0 +1,10 @@
+# Auto-detect text files and normalize line endings to LF in the repo
+* text=auto
+
+# PowerShell scripts
+*.ps1 text eol=crlf
+*.psm1 text eol=crlf
+*.psd1 text eol=crlf
+
+# Markdown
+*.md text eol=lf
